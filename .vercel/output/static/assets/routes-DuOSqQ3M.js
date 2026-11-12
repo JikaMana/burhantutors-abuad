@@ -1,0 +1,1 @@
+import{t as e}from"./index-Bx5Nz799.js";var t=e();function n(){return(0,t.jsxs)(`main`,{className:`p-8`,children:[(0,t.jsx)(`p`,{children:`Opening Exam Oracle…`}),(0,t.jsx)(`a`,{href:`/exam-oracle.html`,children:`Continue`})]})}export{n as component};

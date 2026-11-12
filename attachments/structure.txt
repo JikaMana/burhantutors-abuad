@@ -1,0 +1,38 @@
+.
+├── CSS
+│   ├── abuad.css
+│   ├── oracle.css
+│   ├── style.css
+│   ├── tailwind.css
+│   └── tailwind.input.css
+├── exam-oracle.html
+├── images
+│   ├── book.jpeg
+│   ├── burhan-dark.png
+│   ├── burhan-light.png
+│   ├── hero.jpeg
+│   ├── logo.png
+│   └── TUTORIALS.png
+├── index.html
+├── leaderboard.html
+├── netlify
+│   └── functions
+│       ├── generate-questions.mjs
+│       ├── lib
+│       │   └── account.mjs
+│       ├── paystack-initialize.mjs
+│       ├── paystack-verify.mjs
+│       └── test-history.mjs
+├── NETLIFY-AI-SETUP.md
+├── netlify.toml
+├── package.json
+├── package-lock.json
+├── robots.txt
+├── script
+│   ├── exam-oracle.js
+│   └── leaderboard.js
+├── sitemap.xml
+├── structure.txt
+└── tailwind.config.js
+
+7 directories, 29 files

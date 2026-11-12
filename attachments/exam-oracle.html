@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="theme-color"
+      content="#081423" />
+    <meta
+      name="description"
+      content="Choose a course, test your understanding, and see exactly where to improve with Burhan Tutors Exam Oracle." />
+    <meta
+      property="og:type"
+      content="website" />
+    <meta
+      property="og:site_name"
+      content="Burhan Tutors ABUAD" />
+    <meta
+      property="og:title"
+      content="Exam Oracle | Burhan Tutors ABUAD" />
+    <meta
+      property="og:description"
+      content="Practise course topics, get instant feedback, and find what to improve with Exam Oracle." />
+    <meta
+      property="og:url"
+      content="https://abuad.burhantutors.com/exam-oracle.html" />
+    <meta
+      property="og:image"
+      content="https://abuad.burhantutors.com/images/hero.jpeg" />
+    <meta
+      name="twitter:card"
+      content="summary_large_image" />
+    <link
+      rel="canonical"
+      href="https://abuad.burhantutors.com/exam-oracle.html" />
+    <title>Exam Oracle | Burhan Tutors</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="/images/burhan-dark.png" />
+    <link
+      rel="stylesheet"
+      href="CSS/style.css" />
+    <link
+      rel="stylesheet"
+      href="CSS/tailwind.css" />
+    <link
+      rel="stylesheet"
+      href="CSS/oracle.css" />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <script
+      defer
+      src="https://unpkg.com/lucide@1.28.0/dist/umd/lucide.min.js"></script>
+  </head>
+  <body class="theme-cream oracle-page">
+    <a
+      class="or-skip"
+      href="#setup"
+      >Skip to practice room</a
+    >
+    <header class="nav-shell fixed top-0 left-0 w-full z-[65]">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[76px] flex items-center justify-between">
+        <a
+          href="/"
+          class="site-brand"
+          aria-label="Burhan Tutors home">
+          <span>BURHAN <b>TUTORS</b></span>
+        </a>
+        <nav
+          class="flex items-center gap-5 text-[13px] text-white/70"
+          aria-label="Main navigation">
+          <a
+            href="/"
+            class="hover:text-white"
+            >Academy</a
+          >
+          <!-- <a
+            href="#upgrade"
+            id="paid-plan-nav"
+            class="hover:text-white"
+            >Paid plan</a
+          > -->
+          <!-- <a
+            href="/leaderboard.html"
+            class="hover:text-white"
+            >Leaderboard</a
+          > -->
+        </nav>
+        <a
+          class="btn btn-clay oracle-nav-upgrade"
+          href="#upgrade"
+          aria-label="Upgrade to paid access for 1,500 naira per semester">
+          <span id="nav-premium-label">Go Premium</span>
+        </a>
+        <button
+          id="account-open"
+          class="oracle-account-trigger"
+          type="button"
+          aria-haspopup="dialog">
+          <i
+            data-lucide="user-round"
+            aria-hidden="true"></i>
+          <span id="account-trigger-label">Sign in</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="">
+      <section class="oracle-intro pt-[76px]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+          <div class="oracle-intro-copy">
+            <p class="eyebrow text-clay mb-4">Burhan Tutors · Exam Oracle</p>
+            <h1
+              class="font-display text-4xl sm:text-5xl md:text-[58px] font-extrabold leading-[1.02] text-white">
+              Know what you know.<br /><span class="text-clay"
+                >Find what to fix.</span
+              >
+            </h1>
+            <p class="mt-5 max-w-xl text-[16px] leading-relaxed text-white/65">
+              Practise CBT-style questions for your ABUAD 100-level courses. Get
+              tested instantly, see your strengths, then work through every gap.
+            </p>
+            <div class="mt-7 flex flex-wrap gap-3">
+              <a
+                class="btn btn-clay px-6 py-3.5"
+                href="#setup"
+                ><i
+                  data-lucide="play"
+                  class="w-4 h-4"></i
+                >Start a free test</a
+              >
+              <!-- <a
+                class="btn btn-ghost-dark px-6 py-3.5 oracle-intro-upgrade"
+                href="#upgrade"
+                >Upgrade · ₦1,500/semester</a
+              > -->
+              <!-- <a
+                class="btn btn-ghost-dark px-6 py-3.5"
+                href="/leaderboard.html"
+                ><i
+                  data-lucide="trophy"
+                  class="w-4 h-4"></i
+                >View leaderboard</a
+              > -->
+            </div>
+          </div>
+          <div
+            class="oracle-score-preview"
+            aria-label="Your personal topic progress">
+            <p class="eyebrow text-white/45">Your learning map</p>
+            <p
+              id="learning-map-summary"
+              class="oracle-map-summary">
+              Your topic strengths will take shape as you complete tests.
+            </p>
+            <div
+              id="learning-map-topics"
+              class="oracle-map-topics">
+              <p class="oracle-map-empty">
+                Take a test to build your personal map.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="upgrade"
+        class="oracle-upgrade">
+        <div class="oracle-upgrade-inner">
+          <div>
+            <p class="eyebrow">Paid access · One semester</p>
+            <h2>More room to practise.</h2>
+            <p>
+              Free access gives you 10 questions per course across up to 3
+              courses each day. Paid access unlocks up to 60 questions per test.
+            </p>
+          </div>
+          <div class="oracle-upgrade-action">
+            <strong>₦1,500 <small>/ semester</small></strong>
+            <p>
+              Sign in and pay securely with Paystack. Access is attached to your
+              account.
+            </p>
+            <a
+              class="btn btn-clay px-6 py-3.5"
+              id="buy-premium"
+              href="#setup">
+              <i
+                data-lucide="credit-card"
+                aria-hidden="true"></i>
+              <span id="buy-premium-label">Get paid access · ₦1,500</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="setup"
+        class="oracle-workspace py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="oracle-section-heading">
+            <div>
+              <p class="eyebrow text-clay mb-2">Practice room</p>
+              <h2 class="font-display text-3xl sm:text-4xl font-bold text-ink">
+                Build your test
+              </h2>
+            </div>
+            <div class="oracle-plan-actions">
+              <!-- <button
+                id="welcome-starter-link"
+                class="btn btn-ghost-light oracle-starter-link"
+                type="button"
+                hidden>
+                Try free 2-question starter
+              </button> -->
+              <span
+                id="plan-badge"
+                class="or-plan-badge"
+                >Free plan</span
+              >
+            </div>
+          </div>
+
+          <div
+            id="oracle-notice"
+            class="oracle-notice"
+            role="status"
+            aria-live="polite"
+            hidden></div>
+
+          <div
+            class="or-layout"
+            id="builder">
+            <div class="or-form">
+              <div class="or-step">
+                <label
+                  for="course-select"
+                  class="or-step-title"
+                  ><b>1</b>Choose a course</label
+                >
+                <select
+                  id="course-select"
+                  class="oracle-select"
+                  aria-describedby="course-note"></select>
+                <p
+                  id="course-note"
+                  class="or-hint"
+                  hidden>
+                  Questions for this course follow the standard 100-level
+                  syllabus. They'll match your past questions more closely once
+                  its PDF is added.
+                </p>
+              </div>
+
+              <fieldset class="or-step">
+                <legend class="or-step-title"><b>2</b>Choose topics</legend>
+                <div class="or-step-tools">
+                  <button
+                    type="button"
+                    id="topics-all"
+                    class="oracle-text-button">
+                    Select all
+                  </button>
+                  <button
+                    type="button"
+                    id="topics-none"
+                    class="oracle-text-button">
+                    Clear
+                  </button>
+                </div>
+                <div
+                  id="topic-options"
+                  class="oracle-topic-options"></div>
+              </fieldset>
+
+              <div class="or-step">
+                <label
+                  for="question-count"
+                  class="or-step-title"
+                  ><b>3</b>Number of questions</label
+                >
+                <input
+                  id="question-count"
+                  class="oracle-select or-count"
+                  type="number"
+                  min="1"
+                  max="10"
+                  value="10"
+                  inputmode="numeric" />
+                <p
+                  id="question-limit-note"
+                  class="or-hint"></p>
+              </div>
+            </div>
+
+            <aside
+              class="or-summary"
+              aria-label="Test summary">
+              <p class="eyebrow text-white/45">Your test</p>
+              <dl>
+                <div>
+                  <dt>Course</dt>
+                  <dd id="sum-course">–</dd>
+                </div>
+                <div>
+                  <dt>Topics</dt>
+                  <dd id="sum-topics">–</dd>
+                </div>
+                <div>
+                  <dt>Questions</dt>
+                  <dd id="sum-count">–</dd>
+                </div>
+              </dl>
+              <div
+                id="quota-meter"
+                class="or-meter">
+                <p id="quota-text"></p>
+                <i style="--score: 0%"></i>
+              </div>
+              <button
+                id="start-test"
+                class="btn btn-clay w-full py-4 mt-5"
+                type="button">
+                <i
+                  data-lucide="arrow-right"
+                  class="w-4 h-4"></i
+                >Start test
+              </button>
+              <p class="or-summary-note">
+                Questions load in the background, so you can start after the
+                first few arrive.
+              </p>
+            </aside>
+          </div>
+
+          <section
+            id="test-panel"
+            class="oracle-test-panel"
+            aria-live="polite"
+            hidden>
+            <div class="oracle-test-top">
+              <span
+                id="question-progress"
+                class="eyebrow text-clay"></span>
+              <span
+                id="load-status"
+                class="or-load-status"
+                hidden></span>
+              <button
+                id="exit-test"
+                type="button"
+                class="oracle-text-button">
+                End test
+              </button>
+            </div>
+            <div
+              id="test-progress"
+              class="or-progress"
+              role="progressbar"
+              aria-label="Test progress"
+              aria-valuemin="0"
+              aria-valuenow="0"
+              aria-valuemax="1">
+              <i
+                id="test-progress-bar"
+                style="--score: 0%"></i>
+            </div>
+
+            <div
+              id="question-loading"
+              class="or-loading"
+              hidden>
+              <div
+                class="or-spinner"
+                aria-hidden="true"></div>
+              <p id="load-text">Writing your first questions…</p>
+              <div
+                class="or-skeleton"
+                aria-hidden="true">
+                <i></i><i></i><i></i>
+              </div>
+            </div>
+
+            <div
+              id="question-content"
+              class="oracle-question-body"
+              hidden>
+              <p
+                id="question-topic"
+                class="oracle-topic-tag"></p>
+              <h3
+                id="question-prompt"
+                tabindex="-1"
+                class="font-display text-2xl sm:text-3xl font-semibold text-ink leading-snug"></h3>
+              <div
+                id="answer-options"
+                class="oracle-answer-options"
+                role="group"
+                aria-label="Answer options"></div>
+              <p class="or-hint or-kbd">
+                Tip: press A, B, C or D to answer, then Enter for the next
+                question.
+              </p>
+              <div
+                id="answer-feedback"
+                class="oracle-answer-feedback"
+                aria-live="polite"
+                hidden></div>
+              <button
+                id="show-step"
+                class="btn btn-ghost-light mt-5"
+                type="button"
+                hidden>
+                <i
+                  data-lucide="lightbulb"
+                  class="w-4 h-4"></i
+                >Show step-by-step solution
+              </button>
+              <div
+                id="step-solution"
+                class="oracle-step-solution"
+                hidden></div>
+            </div>
+            <button
+              id="next-question"
+              type="button"
+              class="btn btn-ink px-6 py-3.5 mt-8"
+              disabled>
+              <span id="next-label">Next question</span
+              ><i
+                data-lucide="arrow-right"
+                class="w-4 h-4"></i>
+            </button>
+          </section>
+
+          <section
+            id="results-panel"
+            class="oracle-results"
+            aria-live="polite"
+            hidden></section>
+        </div>
+      </section>
+
+      <section
+        id="progress"
+        class="oracle-progress-section">
+        <div class="oracle-progress-inner">
+          <div class="oracle-progress-heading">
+            <div>
+              <p class="eyebrow text-clay">Your practice record</p>
+              <h2>Recent tests</h2>
+            </div>
+            <span id="progress-account-note"
+              >Sign in to sync your history across devices.</span
+            >
+          </div>
+          <div
+            id="recent-tests"
+            class="oracle-recent-tests">
+            <p class="oracle-recent-empty">
+              Your completed tests will appear here.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="theme-ink2 py-8">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between gap-4 text-xs text-white/45">
+        <span>Burhan Tutors · Exam Oracle</span>
+        <a
+          href="#upgrade"
+          id="footer-upgrade"
+          class="hover:text-white"
+          >Upgrade to paid access</a
+        >
+        <a
+          href="/"
+          class="hover:text-white"
+          >Back to academy</a
+        >
+      </div>
+    </footer>
+
+    <dialog
+      id="welcome-dialog"
+      class="oracle-welcome">
+      <button
+        id="skip-welcome"
+        class="oracle-skip"
+        type="button">
+        Skip
+      </button>
+      <div class="oracle-welcome-mark">
+        <i
+          data-lucide="sparkles"
+          class="w-5 h-5"></i>
+      </div>
+      <p class="eyebrow text-clay">
+        Exam Oracle · <span id="welcome-step-count">01 / 03</span>
+      </p>
+      <h2
+        id="welcome-title"
+        class="font-display text-3xl font-bold text-ink mt-4"></h2>
+      <div
+        class="oracle-welcome-dots"
+        aria-hidden="true">
+        <i></i><i></i><i></i>
+      </div>
+      <button
+        id="welcome-next"
+        class="btn btn-ink w-full py-3.5 mt-5"
+        type="button">
+        Next
+      </button>
+      <button
+        id="welcome-try"
+        class="btn btn-clay w-full py-3.5 mt-3"
+        type="button"
+        hidden>
+        Take free 2-question starter
+      </button>
+    </dialog>
+
+    <div
+      id="register-prompt"
+      class="oracle-register"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="register-title"
+      hidden>
+      <div class="oracle-register-panel">
+        <button
+          id="close-register"
+          class="oracle-register-close"
+          type="button"
+          aria-label="Close">
+          <i
+            data-lucide="x"
+            class="w-5 h-5"></i>
+        </button>
+        <p class="eyebrow text-clay">Keep your momentum</p>
+        <h2
+          id="register-title"
+          class="font-display text-2xl font-bold text-ink mt-3">
+          Understood it? Now master it.
+        </h2>
+        <p class="text-sm text-ink/65 mt-3 leading-relaxed">
+          Register for our live classes and never miss this type of question
+          again.
+        </p>
+        <a
+          class="btn btn-clay w-full py-3.5 mt-6"
+          href="/#fees"
+          ><i
+            data-lucide="arrow-up-right"
+            class="w-4 h-4"></i
+          >See plans and register</a
+        >
+      </div>
+    </div>
+    <dialog
+      id="account-dialog"
+      class="oracle-account-dialog"
+      aria-labelledby="account-dialog-title">
+      <button
+        id="account-close"
+        class="oracle-register-close"
+        type="button"
+        aria-label="Close account dialog">
+        <i
+          data-lucide="x"
+          aria-hidden="true"></i>
+      </button>
+      <div id="account-auth-view">
+        <p class="eyebrow text-clay">Your Exam Oracle account</p>
+        <h2
+          id="account-dialog-title"
+          class="font-display text-2xl font-bold text-ink mt-2">
+          Sign in or create an account
+        </h2>
+        <p class="oracle-account-copy">
+          Sign in to take tests, sync your results, and manage your access.
+        </p>
+        <div class="oracle-account-fields">
+          <label for="account-email-input">Email address</label>
+          <input
+            id="account-email-input"
+            class="oracle-select"
+            type="email"
+            autocomplete="email"
+            placeholder="you@example.com" />
+          <label for="account-password">Password</label>
+          <input
+            id="account-password"
+            class="oracle-select"
+            type="password"
+            autocomplete="current-password"
+            placeholder="At least 6 characters" />
+        </div>
+        <div class="or-account-actions">
+          <button
+            id="sign-in"
+            type="button"
+            class="btn btn-ink px-5">
+            Sign in
+          </button>
+          <button
+            id="create-account"
+            type="button"
+            class="btn btn-clay px-5">
+            Create account
+          </button>
+          <button
+            id="google-sign-in"
+            type="button"
+            class="btn btn-ghost-light px-5">
+            Continue with Google
+          </button>
+        </div>
+      </div>
+      <div
+        id="account-profile-view"
+        hidden>
+        <p class="eyebrow text-clay">Account profile</p>
+        <h2
+          id="account-dialog-profile-title"
+          class="font-display text-2xl font-bold text-ink mt-2">
+          Your profile
+        </h2>
+        <p
+          id="account-email"
+          class="or-account-email"></p>
+        <div class="oracle-profile-plan">
+          <span id="profile-plan-label">Free plan</span>
+          <span id="profile-premium-expiry"></span>
+        </div>
+        <p
+          id="profile-usage"
+          class="oracle-profile-usage">
+          No paid practice recorded yet.
+        </p>
+        <p
+          id="profile-usage-courses"
+          class="oracle-profile-usage-courses"></p>
+        <button
+          id="profile-buy-premium"
+          class="btn btn-clay w-full py-3 mt-4"
+          type="button">
+          Get paid access · ₦1,500
+        </button>
+        <button
+          id="sign-out"
+          type="button"
+          class="oracle-text-button mt-5">
+          Sign out
+        </button>
+      </div>
+      <p
+        id="account-status"
+        class="or-code-status"
+        role="status"
+        aria-live="polite"></p>
+    </dialog>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+    <script
+      defer
+      src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+    <script>
+      window.firebaseReady = new Promise(function (resolve) {
+        window.addEventListener("load", function () {
+          var firebaseConfig = {
+            apiKey: "AIzaSyDaIbNnFoxs43TSmfAleFK3oQPuQKog2DU",
+            authDomain: "burhan-tutors-website.firebaseapp.com",
+            projectId: "burhan-tutors-website",
+            storageBucket: "burhan-tutors-website.firebasestorage.app",
+            messagingSenderId: "359861270073",
+            appId: "1:359861270073:web:516d9da8eb4e8c46613fe8",
+            measurementId: "G-XNEE05CQ4E",
+          };
+
+          if (window.firebase && !window.firebase.apps.length) {
+            window.firebase.initializeApp(firebaseConfig);
+          }
+          resolve(window.firebase);
+        });
+      });
+    </script>
+    <script
+      defer
+      src="script/exam-oracle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/exam-oracle.html",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Exam Oracle | Burhan Tutors",
+      "hasCanvas": false,
+      "bodyTextLen": 1633,
+      "bodyTextHash": "7f8b3d174297f2a35aff63a6f2f7b99c0a07f8683b3f645fe7a9239eb6c113d8",
+      "bodyTextPrefix": "Skip to practice room BURHAN TUTORS Academy Free through 20 Nov ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/exam-oracle.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Exam Oracle | Burhan Tutors",
+      "hasCanvas": false,
+      "bodyTextLen": 1613,
+      "bodyTextHash": "6c40275033b6661b10a9de4b2473dbf6bb846685b148daf5bc90164161ef59d3",
+      "bodyTextPrefix": "Skip to practice room BURHAN TUTORS Free through 20 Nov BURHAN T",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/exam-oracle-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/exam-oracle.json"
+}

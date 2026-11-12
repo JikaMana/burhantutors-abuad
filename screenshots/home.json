@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Exam Oracle for ABUAD Students | Burhan Tutors",
+      "hasCanvas": false,
+      "bodyTextLen": 2020,
+      "bodyTextHash": "62834bc2876654d40f382edd822ef441ac791256e8c5f7fd53742679772ef15e",
+      "bodyTextPrefix": "Skip to content BURHAN TUTORS ABUAD 100 LEVEL Exam Oracle Offer ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/home.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Exam Oracle for ABUAD Students | Burhan Tutors",
+      "hasCanvas": false,
+      "bodyTextLen": 1992,
+      "bodyTextHash": "1fbfbbb17c5d5a3f1a6d45655a0dc26b6e498a458fee0d713db75ef23bd51747",
+      "bodyTextPrefix": "Skip to content BURHAN TUTORS ABUAD 100 LEVEL Explore Oracle ABU",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/home-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/home.json"
+}

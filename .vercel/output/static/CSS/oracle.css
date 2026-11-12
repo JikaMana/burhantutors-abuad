@@ -1,0 +1,1490 @@
+/* Exam Oracle: builder, loading and test-room refinements.
+   Loaded after style.css; reuses its tokens (--ink, --clay, --line-light). */
+
+.or-skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+}
+.or-skip:focus {
+  left: 1rem;
+  top: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 6px;
+}
+
+.or-plan-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--line-light);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font:
+    500 0.72rem "JetBrains Mono",
+    monospace;
+  white-space: nowrap;
+}
+.oracle-plan-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+.oracle-starter-link {
+  min-height: 38px;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+.oracle-nav-upgrade {
+  flex: 0 0 auto;
+  gap: 0.45rem;
+  padding: 0.58rem 0.8rem;
+  font-size: 0.72rem;
+  white-space: nowrap;
+}
+.oracle-nav-upgrade svg {
+  width: 15px;
+  height: 15px;
+}
+.oracle-nav-upgrade span {
+  display: grid;
+  gap: 2px;
+  line-height: 1.1;
+  text-align: left;
+}
+.oracle-nav-upgrade small {
+  font:
+    500 0.62rem "JetBrains Mono",
+    monospace;
+}
+.oracle-account-trigger {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid rgba(247, 246, 243, 0.3);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--cream);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.oracle-account-trigger:hover {
+  border-color: var(--clay-hi);
+}
+.oracle-account-trigger svg {
+  width: 17px;
+  height: 17px;
+}
+
+.oracle-progress-section {
+  background: #f0eee8;
+}
+.oracle-progress-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3.25rem 2rem 4rem;
+}
+.oracle-progress-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--ink-line);
+}
+.oracle-progress-heading h2 {
+  color: var(--ink);
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+.oracle-progress-heading > span {
+  color: rgba(8, 20, 35, 0.62);
+  font-size: 0.78rem;
+}
+.oracle-recent-tests {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 0.7rem;
+  padding-top: 1rem;
+}
+.oracle-recent-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.2rem 1rem;
+  padding: 0.9rem 1rem;
+  border-top: 2px solid var(--clay);
+  border-bottom: 1px solid var(--ink-line);
+  border-radius: 6px;
+  background: #fff;
+}
+.oracle-recent-item strong {
+  font-size: 0.82rem;
+}
+.oracle-recent-item span {
+  color: rgba(8, 20, 35, 0.6);
+  font-size: 0.72rem;
+}
+.oracle-recent-item b {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: var(--clay-deep);
+  font-size: 1rem;
+}
+.oracle-recent-empty {
+  grid-column: 1 / -1;
+  padding: 1rem 0;
+  color: rgba(8, 20, 35, 0.6);
+  font-size: 0.82rem;
+}
+.oracle-map-summary {
+  min-height: 2.4em;
+  margin: 0.45rem 0 1rem;
+  color: rgba(247, 246, 243, 0.6);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+.oracle-map-topics {
+  display: grid;
+  gap: 0.65rem;
+}
+.oracle-map-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.25rem 0.7rem;
+  color: rgba(247, 246, 243, 0.88);
+  font-size: 0.75rem;
+}
+.oracle-map-row strong {
+  color: #a9ca9a;
+  font-size: 0.68rem;
+}
+.oracle-map-row.is-focus strong {
+  color: #f1a083;
+}
+.oracle-map-row i {
+  grid-column: 1 / -1;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: rgba(247, 246, 243, 0.14);
+}
+.oracle-map-row i::before {
+  display: block;
+  width: var(--score);
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #76a789, #c2d5a5);
+  content: "";
+}
+.oracle-map-row.is-focus i::before {
+  background: linear-gradient(90deg, #c15f3c, #efaa7f);
+}
+.oracle-map-empty {
+  color: rgba(247, 246, 243, 0.58);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.oracle-intro-upgrade {
+  border: 1px solid rgba(247, 246, 243, 0.3);
+  color: var(--cream);
+}
+.oracle-intro-upgrade:hover {
+  border-color: var(--clay-hi);
+  color: #fff;
+}
+
+.oracle-upgrade {
+  background: var(--ink-2);
+  color: var(--cream);
+}
+.oracle-upgrade-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2.1rem 2rem;
+}
+.oracle-upgrade .eyebrow {
+  margin-bottom: 0.65rem;
+  color: #a9c2a2;
+}
+.oracle-upgrade h2 {
+  color: #fff;
+  font:
+    700 1.45rem/1.2 "Manrope",
+    sans-serif;
+}
+.oracle-upgrade-inner > div:first-child > p:last-child {
+  max-width: 620px;
+  margin-top: 0.55rem;
+  color: rgba(247, 246, 243, 0.6);
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+.oracle-upgrade-action {
+  min-width: 260px;
+}
+.oracle-upgrade-action > strong {
+  display: block;
+  color: #fff;
+  font:
+    700 1.65rem/1.2 "Manrope",
+    sans-serif;
+}
+.oracle-upgrade-action > strong small {
+  color: rgba(247, 246, 243, 0.6);
+  font:
+    400 0.75rem "Manrope",
+    sans-serif;
+}
+.oracle-upgrade-action > p {
+  margin: 0.35rem 0 0.85rem;
+  color: rgba(247, 246, 243, 0.58);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+.oracle-upgrade-action .btn {
+  font-size: 0.78rem;
+}
+.oracle-upgrade-action svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------- Builder layout ---------- */
+.or-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+.or-layout[hidden] {
+  display: none;
+}
+.or-form {
+  display: grid;
+  gap: 0;
+  background: #fff;
+  border: 1px solid var(--line-light);
+  border-radius: 10px;
+}
+.or-step {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+  padding: 1.5rem;
+  border: 0;
+  border-bottom: 1px solid var(--line-light);
+}
+.or-step-title {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+  color: var(--ink);
+  font:
+    600 0.95rem "Manrope",
+    sans-serif;
+  padding: 0;
+}
+.or-step-title b {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: #fff;
+  font:
+    500 0.72rem "JetBrains Mono",
+    monospace;
+}
+.or-step-tools {
+  position: static;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin: -0.5rem 0 1rem;
+  padding-bottom: 0.65rem;
+  border-bottom: 1px solid var(--ink-line);
+}
+.or-step-tools .oracle-text-button {
+  min-height: 36px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--ink-line);
+  border-radius: 7px;
+  background: #fff;
+  font-size: 0.78rem;
+}
+.or-step-tools .oracle-text-button:hover {
+  border-color: rgba(193, 95, 60, 0.5);
+  background: rgba(193, 95, 60, 0.06);
+}
+.or-step-tools .oracle-text-button:focus-visible {
+  outline-offset: 1px;
+}
+.or-hint {
+  margin-top: 0.7rem;
+  color: rgba(8, 20, 35, 0.6);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+.or-count {
+  max-width: 160px;
+  font-weight: 600;
+}
+.oracle-select:focus-visible,
+.oracle-topic-choice input:focus-visible + span {
+  outline: 2px solid var(--clay);
+  outline-offset: 2px;
+}
+.oracle-topic-choice span {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.82rem;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+.oracle-topic-choice:hover span {
+  border-color: rgba(193, 95, 60, 0.5);
+}
+.oracle-text-button {
+  cursor: pointer;
+}
+
+/* Access code */
+.or-code {
+  padding: 1rem 1.5rem 1.25rem;
+}
+.or-code summary {
+  cursor: pointer;
+  color: rgba(8, 20, 35, 0.7);
+  font-size: 0.82rem;
+  font-weight: 600;
+  min-height: 32px;
+  display: flex;
+  align-items: center;
+}
+.or-code [hidden] {
+  display: none !important;
+}
+.or-account-title {
+  color: var(--ink);
+  font:
+    600 0.95rem "Manrope",
+    sans-serif;
+}
+.or-account-email {
+  margin-top: 0.55rem;
+  color: rgba(8, 20, 35, 0.7);
+  font-size: 0.82rem;
+}
+.or-code-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+  max-width: 680px;
+}
+.or-code-row .oracle-select {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+.or-account-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.75rem;
+}
+.or-account-actions .btn {
+  min-height: 42px;
+  font-size: 0.78rem;
+}
+.oracle-account-dialog {
+  position: fixed;
+  width: min(94vw, 520px);
+  max-width: 520px;
+  max-height: min(88vh, 760px);
+  overflow: auto;
+  padding: 2rem;
+  border: 0;
+  border-radius: 8px;
+  background: var(--cream);
+  color: var(--ink);
+  box-shadow: var(--sh-3);
+}
+.oracle-account-dialog::backdrop {
+  background: rgba(8, 20, 35, 0.72);
+  backdrop-filter: blur(3px);
+}
+.oracle-account-dialog[open] {
+  animation: oracle-dialog-in 0.2s ease-out;
+}
+.oracle-account-dialog [hidden] {
+  display: none !important;
+}
+.oracle-account-dialog > .oracle-register-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+}
+.oracle-account-dialog > .oracle-register-close svg {
+  width: 18px;
+  height: 18px;
+}
+.oracle-account-copy {
+  margin: 0.65rem 0 1.15rem;
+  color: rgba(8, 20, 35, 0.65);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+.oracle-account-fields {
+  display: grid;
+  gap: 0.5rem;
+}
+.oracle-account-fields label {
+  margin-top: 0.3rem;
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.oracle-account-fields .oracle-select {
+  width: 100%;
+}
+.oracle-account-dialog .or-account-actions {
+  margin-top: 1rem;
+}
+.oracle-account-dialog .or-code-status {
+  margin-top: 1rem;
+}
+.oracle-profile-plan {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--ink-line);
+  border-bottom: 1px solid var(--ink-line);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+.oracle-profile-plan span:last-child {
+  color: rgba(8, 20, 35, 0.62);
+  font-size: 0.76rem;
+  font-weight: 500;
+  text-align: right;
+}
+.oracle-profile-usage {
+  margin-top: 0.8rem;
+  color: rgba(8, 20, 35, 0.64);
+  font-size: 0.78rem;
+}
+.oracle-history-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+.oracle-history-heading h3 {
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+}
+#history-status {
+  color: rgba(8, 20, 35, 0.56);
+  font-size: 0.72rem;
+}
+.oracle-test-history {
+  display: grid;
+  gap: 0.5rem;
+  max-height: 230px;
+  overflow: auto;
+  margin-top: 0.7rem;
+}
+.oracle-history-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.2rem 1rem;
+  padding: 0.75rem;
+  border: 1px solid var(--ink-line);
+  border-radius: 6px;
+  background: #fff;
+}
+.oracle-history-item strong {
+  font-size: 0.82rem;
+}
+.oracle-history-item span {
+  color: rgba(8, 20, 35, 0.6);
+  font-size: 0.72rem;
+}
+.oracle-history-item b {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  color: var(--clay-deep);
+  font-size: 1rem;
+}
+.oracle-history-empty {
+  padding: 1rem 0;
+  color: rgba(8, 20, 35, 0.6);
+  font-size: 0.82rem;
+}
+@keyframes oracle-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.or-code-row .btn {
+  min-height: 46px;
+  font-size: 0.82rem;
+}
+.or-code-status {
+  min-height: 1.2rem;
+  margin-top: 0.6rem;
+  font-size: 0.8rem;
+}
+.or-code-status.is-ok {
+  color: #31784a;
+}
+.or-code-status.is-bad {
+  color: #a54131;
+}
+.or-code-help {
+  max-width: 680px;
+  margin-top: 0.6rem;
+  color: rgba(8, 20, 35, 0.58);
+  font-size: 0.74rem;
+  line-height: 1.55;
+}
+
+/* Summary card */
+.or-summary {
+  position: sticky;
+  top: 96px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: var(--ink);
+  color: #fff;
+}
+.or-summary dl {
+  margin-top: 1rem;
+}
+.or-summary dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 0.85rem;
+}
+.or-summary dt {
+  color: rgba(255, 255, 255, 0.55);
+}
+.or-summary dd {
+  font-weight: 600;
+  text-align: right;
+}
+.or-meter {
+  margin-top: 1.1rem;
+}
+.or-meter p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.78rem;
+}
+.or-meter i,
+.or-progress {
+  display: block;
+  height: 6px;
+  margin-top: 0.55rem;
+  overflow: hidden;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.14);
+}
+.or-meter i::before,
+.or-progress i::before {
+  content: "";
+  display: block;
+  width: var(--score);
+  height: 100%;
+  border-radius: inherit;
+  background: var(--clay-hi);
+  transition: width 0.35s ease;
+}
+.or-summary .oracle-start,
+.or-summary #start-test {
+  min-height: 52px;
+}
+.or-summary #start-test:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.or-summary-note {
+  margin-top: 0.9rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+/* ---------- Test room ---------- */
+.oracle-test-top {
+  flex-wrap: wrap;
+}
+.or-load-status {
+  margin-left: auto;
+  color: rgba(8, 20, 35, 0.55);
+  font:
+    500 0.7rem "JetBrains Mono",
+    monospace;
+}
+.or-progress {
+  background: #e8e5de;
+  margin-top: 1rem;
+}
+.oracle-test-top .oracle-text-button {
+  min-height: 32px;
+}
+#question-prompt:focus {
+  outline: none;
+}
+.oracle-answer-option {
+  min-height: 60px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.oracle-answer-option:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 2px;
+}
+.oracle-answer-option:disabled {
+  cursor: default;
+}
+.or-kbd {
+  display: none;
+}
+@media (hover: hover) and (pointer: fine) {
+  .or-kbd {
+    display: block;
+  }
+}
+.oracle-notice.is-warn {
+  border-left-color: #bd503c;
+  background: #fff7f4;
+}
+#next-question:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Loading state */
+.or-loading {
+  max-width: 760px;
+  margin-top: 2.5rem;
+}
+.or-loading[hidden],
+#question-content[hidden] {
+  display: none;
+}
+.or-loading p {
+  margin-top: 1rem;
+  color: rgba(8, 20, 35, 0.7);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.or-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid #e8e5de;
+  border-top-color: var(--clay);
+  border-radius: 50%;
+  animation: or-spin 0.8s linear infinite;
+}
+.or-skeleton {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1.6rem;
+}
+.or-skeleton i {
+  display: block;
+  height: 58px;
+  border-radius: 6px;
+  background: linear-gradient(90deg, #efece6 25%, #f7f5f1 50%, #efece6 75%);
+  background-size: 200% 100%;
+  animation: or-shimmer 1.4s ease-in-out infinite;
+}
+.or-skeleton i:first-child {
+  height: 28px;
+  width: 70%;
+}
+@keyframes or-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes or-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .or-spinner,
+  .or-skeleton i {
+    animation: none;
+  }
+  .or-meter i::before,
+  .or-progress i::before {
+    transition: none;
+  }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .oracle-upgrade-inner {
+    gap: 1.5rem;
+  }
+  .oracle-progress-inner {
+    padding: 2.5rem 1.1rem 3rem;
+  }
+  .oracle-progress-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .oracle-recent-tests {
+    grid-template-columns: 1fr;
+  }
+  .oracle-upgrade-action {
+    min-width: 230px;
+  }
+  .or-layout {
+    grid-template-columns: 1fr;
+  }
+  .or-summary {
+    position: static;
+    order: 2;
+  }
+}
+@media (max-width: 640px) {
+  .nav-shell nav {
+    display: none;
+  }
+  .oracle-nav-upgrade {
+    padding: 0.55rem 0.7rem;
+  }
+  .oracle-account-trigger {
+    min-width: 42px;
+    padding: 0.55rem;
+  }
+  .oracle-account-trigger span {
+    display: none;
+  }
+  .oracle-account-dialog {
+    padding: 1.5rem;
+  }
+  .oracle-upgrade-inner {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    padding: 1.7rem 1.1rem;
+  }
+  .oracle-upgrade-action {
+    min-width: 0;
+  }
+  .or-step {
+    padding: 1.15rem;
+  }
+  .or-step-tools {
+    justify-content: flex-start;
+    margin: -0.4rem 0 0.8rem;
+  }
+  .or-code {
+    padding: 1rem 1.15rem;
+  }
+  .or-code-row {
+    flex-direction: column;
+  }
+  .or-count {
+    max-width: none;
+  }
+  .oracle-plan-actions {
+    justify-content: flex-start;
+  }
+  .oracle-starter-link {
+    white-space: normal;
+  }
+}
+
+/* Oracle visual refinement */
+.nav-shell,
+.nav-shell.is-stuck {
+  top: 12px;
+  left: 50%;
+  width: min(1120px, calc(100% - 32px));
+  transform: translateX(-50%);
+  border: 1px solid rgba(247, 246, 243, 0.13);
+  border-radius: 18px;
+  background: rgba(8, 20, 35, 0.94);
+  box-shadow: 0 12px 34px rgba(8, 20, 35, 0.18);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+}
+.nav-shell > div {
+  max-width: none;
+  height: 68px;
+  padding: 0 24px;
+}
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  letter-spacing: 0.01em;
+}
+.site-brand b {
+  color: var(--clay-hi);
+}
+.nav-shell nav {
+  gap: 28px;
+  font-size: 13px;
+}
+.nav-shell nav a {
+  position: relative;
+  padding: 10px 2px;
+  transition: color 0.2s var(--ease);
+}
+.nav-shell nav a::after {
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  left: 0;
+  height: 2px;
+  background: var(--clay);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s var(--ease);
+}
+.nav-shell nav a:hover::after,
+.nav-shell nav a:focus-visible::after {
+  transform: scaleX(1);
+}
+.oracle-nav-upgrade {
+  min-height: 42px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+.nav-shell nav a {
+  color: rgba(247, 246, 243, 0.72);
+}
+.nav-shell nav a:hover,
+.nav-shell nav a.text-white {
+  color: #fff;
+}
+.nav-shell nav a.text-white::after {
+  transform: scaleX(1);
+}
+
+.oracle-intro {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--ink);
+  background-image:
+    radial-gradient(
+      60% 80% at 88% 10%,
+      rgba(193, 95, 60, 0.28),
+      transparent 60%
+    ),
+    radial-gradient(
+      50% 60% at 0% 100%,
+      rgba(115, 131, 107, 0.18),
+      transparent 70%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(8, 20, 35, 0.96),
+      rgba(8, 20, 35, 0.88) 55%,
+      rgba(8, 20, 35, 0.7)
+    ),
+    url("../images/hero.jpeg");
+  background-position: center;
+  background-size: auto, auto, auto, cover;
+}
+.oracle-intro::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(247, 246, 243, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247, 246, 243, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+  content: "";
+  -webkit-mask-image: linear-gradient(180deg, #000, transparent 85%);
+  mask-image: linear-gradient(180deg, #000, transparent 85%);
+}
+.oracle-intro h1 {
+  font-weight: 800;
+  text-wrap: balance;
+}
+.oracle-intro-copy > p:not(.eyebrow) {
+  font-size: 17px;
+  line-height: 1.7;
+}
+.oracle-intro-copy {
+  animation: bt-rise 0.8s var(--ease) both;
+}
+.oracle-score-preview {
+  padding: 1.75rem;
+  border: 1px solid rgba(247, 246, 243, 0.16);
+  border-radius: var(--r-lg);
+  background: linear-gradient(
+    160deg,
+    rgba(18, 40, 63, 0.82),
+    rgba(8, 20, 35, 0.82)
+  );
+  box-shadow:
+    0 1px 0 rgba(247, 246, 243, 0.08) inset,
+    0 30px 60px rgba(0, 0, 0, 0.35);
+  animation: bt-rise 0.9s 0.15s var(--ease) both;
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+.oracle-preview-row {
+  padding: 1.05rem 0;
+  border-bottom: 1px solid rgba(247, 246, 243, 0.09);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.oracle-preview-row:last-of-type {
+  border-bottom: 0;
+}
+.oracle-preview-row strong,
+.oracle-preview-row strong.needs-work {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(143, 199, 161, 0.14);
+  color: #a8dbb9;
+  font-size: 12px;
+  font-weight: 600;
+}
+.oracle-preview-row strong.needs-work {
+  background: rgba(217, 125, 90, 0.18);
+  color: #f0b595;
+}
+.oracle-preview-row i,
+.oracle-result-topic i {
+  height: 8px;
+  border-radius: 8px;
+}
+.oracle-preview-row i::before {
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--clay), var(--clay-hi));
+}
+.oracle-score-preview p.text-white\/45 {
+  color: rgba(247, 246, 243, 0.62);
+  font-size: 13px;
+}
+@keyframes bt-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+.oracle-upgrade {
+  border-top: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+  background: var(--ink-2);
+}
+.oracle-upgrade-inner {
+  padding: 2.4rem 2rem;
+}
+.oracle-upgrade-action {
+  padding: 1.4rem 1.5rem;
+  border: 1px solid rgba(193, 95, 60, 0.45);
+  border-radius: var(--r-lg);
+  background: linear-gradient(
+    160deg,
+    rgba(193, 95, 60, 0.14),
+    rgba(193, 95, 60, 0.04)
+  );
+}
+.oracle-upgrade-inner > div:first-child > p:last-child {
+  color: rgba(247, 246, 243, 0.72);
+  font-size: 0.9rem;
+}
+.oracle-upgrade-action > p {
+  color: rgba(247, 246, 243, 0.7);
+  font-size: 0.8rem;
+}
+
+.or-plan-badge {
+  min-height: 32px;
+  padding: 0.35rem 0.9rem;
+  border-color: var(--ink-line);
+  box-shadow: var(--sh-1);
+  font-size: 0.78rem;
+}
+.oracle-notice {
+  border: 1px solid var(--ink-line);
+  border-left: 4px solid var(--clay);
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-1);
+}
+.or-form {
+  overflow: hidden;
+  border: 1px solid var(--ink-line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-2);
+}
+.or-step {
+  padding: 1.75rem;
+}
+.or-step-title {
+  font-size: 1.02rem;
+}
+.or-step-title b {
+  width: 28px;
+  height: 28px;
+  background: var(--clay-deep);
+  box-shadow: 0 4px 10px rgba(193, 95, 60, 0.3);
+  font-size: 0.8rem;
+}
+.oracle-select {
+  min-height: 48px;
+  padding: 0 1rem;
+  border: 1px solid rgba(8, 20, 35, 0.22);
+  border-radius: var(--r-md);
+  background-color: #fff;
+  font-size: 0.95rem;
+  transition:
+    border-color 0.18s var(--ease),
+    box-shadow 0.18s var(--ease);
+}
+.oracle-select:hover {
+  border-color: rgba(8, 20, 35, 0.45);
+}
+.oracle-select:focus,
+.oracle-select:focus-visible {
+  border-color: var(--clay-deep);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(193, 95, 60, 0.18);
+}
+select.oracle-select {
+  appearance: none;
+  padding-right: 2.6rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23081423' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+.oracle-text-button {
+  min-height: 32px;
+  padding: 0 0.5rem;
+  border-radius: 6px;
+  color: var(--clay-deep);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.18s var(--ease);
+}
+.oracle-text-button:hover {
+  background: rgba(193, 95, 60, 0.1);
+}
+.oracle-topic-options {
+  gap: 0.6rem;
+}
+.oracle-topic-choice span {
+  min-height: 44px;
+  border: 1px solid rgba(8, 20, 35, 0.2);
+  border-radius: var(--r-md);
+  background: #fff;
+  color: rgba(8, 20, 35, 0.85);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition:
+    border-color 0.18s var(--ease),
+    background-color 0.18s var(--ease),
+    transform 0.18s var(--ease);
+}
+.oracle-topic-choice:hover span {
+  border-color: var(--clay);
+  transform: translateY(-1px);
+}
+.oracle-topic-choice input:checked + span {
+  border-color: var(--clay-deep);
+  background: rgba(193, 95, 60, 0.1);
+  color: var(--ink);
+  font-weight: 600;
+  box-shadow: 0 0 0 1px var(--clay-deep) inset;
+}
+.oracle-topic-choice input:checked + span::before {
+  margin-right: 0.5rem;
+  color: var(--clay-deep);
+  content: "\2713";
+  font-weight: 700;
+}
+.or-hint,
+.or-code-help {
+  color: rgba(8, 20, 35, 0.68);
+  font-size: 0.85rem;
+}
+.or-code summary {
+  min-height: 44px;
+  color: var(--ink);
+}
+.or-code-status.is-ok {
+  color: #2a6e43;
+}
+.or-code-status.is-bad {
+  color: #9c3626;
+}
+.or-summary {
+  border: 1px solid var(--line-dark);
+  border-radius: var(--r-lg);
+  background: linear-gradient(170deg, var(--ink-3), var(--ink));
+  box-shadow: var(--sh-3);
+}
+.or-summary dd {
+  font-family: "Manrope", sans-serif;
+}
+.or-meter p,
+.or-summary-note {
+  color: rgba(247, 246, 243, 0.7);
+  font-size: 0.82rem;
+}
+.or-meter i::before,
+.or-progress i::before {
+  background: linear-gradient(90deg, var(--clay), var(--clay-hi));
+}
+.or-meter i,
+.or-progress {
+  height: 8px;
+  border-radius: 8px;
+}
+.or-summary #start-test {
+  min-height: 54px;
+  font-size: 1rem;
+}
+
+.oracle-test-panel,
+.oracle-results {
+  border: 1px solid var(--ink-line);
+  border-radius: var(--r-lg);
+  box-shadow: var(--sh-2);
+}
+.or-progress {
+  background: var(--sand);
+}
+.or-load-status {
+  font-size: 0.78rem;
+}
+.oracle-topic-tag {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(193, 95, 60, 0.12);
+  color: var(--clay-deep);
+  font-size: 0.78rem;
+}
+.oracle-origin-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font: 600 0.68rem "JetBrains Mono", monospace;
+  letter-spacing: 0.04em;
+}
+.oracle-origin-badge.is-pq {
+  background: var(--clay-deep);
+}
+#question-prompt {
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.3;
+  text-wrap: balance;
+}
+.oracle-answer-options {
+  gap: 0.8rem;
+}
+.oracle-answer-option {
+  min-height: 64px;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(8, 20, 35, 0.2);
+  border-radius: var(--r-md);
+  background: #fff;
+  box-shadow: var(--sh-1);
+  font-size: 1rem;
+  transition:
+    transform 0.18s var(--ease),
+    box-shadow 0.18s var(--ease),
+    border-color 0.18s var(--ease),
+    background-color 0.18s var(--ease);
+}
+.oracle-answer-option:hover:not(:disabled) {
+  border-color: var(--clay);
+  background: #fff;
+  transform: translateY(-2px);
+  box-shadow: var(--sh-2);
+}
+.oracle-option-key {
+  flex: 0 0 32px;
+  background: var(--sand);
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition:
+    background-color 0.18s var(--ease),
+    color 0.18s var(--ease);
+}
+.oracle-answer-option:hover:not(:disabled) .oracle-option-key {
+  background: var(--clay-deep);
+  color: #fff;
+}
+.oracle-answer-option.is-correct {
+  border-color: #2a6e43;
+  background: #eaf6ee;
+  box-shadow: 0 0 0 1px #2a6e43 inset;
+}
+.oracle-answer-option.is-correct .oracle-option-key {
+  background: #2a6e43;
+  color: #fff;
+}
+.oracle-answer-option.is-wrong {
+  border-color: #9c3626;
+  background: #fdeeea;
+  box-shadow: 0 0 0 1px #9c3626 inset;
+}
+.oracle-answer-option.is-wrong .oracle-option-key {
+  background: #9c3626;
+  color: #fff;
+}
+.oracle-answer-feedback {
+  font-size: 0.95rem;
+}
+.oracle-answer-feedback.is-correct,
+.oracle-correct-answer,
+.oracle-all-correct {
+  color: #2a6e43;
+}
+.oracle-answer-feedback.is-wrong {
+  color: #9c3626;
+}
+.oracle-step-solution {
+  padding: 1.25rem 1.4rem;
+  border-left: 4px solid var(--clay);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.or-spinner {
+  border-top-color: var(--clay-deep);
+}
+.oracle-score {
+  color: var(--clay-deep);
+  font-size: clamp(2.6rem, 6vw, 3.6rem);
+}
+.oracle-results-grid {
+  gap: 2.5rem;
+}
+.oracle-result-topic {
+  font-size: 0.92rem;
+}
+.oracle-result-topic strong {
+  font-size: 0.8rem;
+}
+.oracle-result-topic .topic-strong {
+  color: var(--olive-deep);
+}
+.oracle-result-topic .topic-weak {
+  color: var(--clay-deep);
+}
+.oracle-result-topic i::before {
+  background: linear-gradient(90deg, var(--clay-deep), var(--clay));
+}
+.oracle-missed-item {
+  border: 1px solid var(--ink-line);
+  border-left: 4px solid var(--clay);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  background: #fff;
+  box-shadow: var(--sh-1);
+}
+.oracle-register-inline {
+  border: 1px solid rgba(193, 95, 60, 0.35);
+  border-radius: var(--r-lg);
+  background: linear-gradient(
+    160deg,
+    rgba(193, 95, 60, 0.1),
+    rgba(193, 95, 60, 0.03)
+  );
+}
+.oracle-welcome,
+.oracle-register-panel {
+  border: 0;
+  border-radius: var(--r-lg);
+  background: var(--cream);
+  box-shadow: var(--sh-3);
+}
+.oracle-welcome::before,
+.oracle-register-panel::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  background: linear-gradient(90deg, var(--clay), var(--clay-hi));
+  content: "";
+}
+.oracle-welcome {
+  position: fixed;
+  overflow: hidden;
+}
+.oracle-welcome-mark {
+  border-radius: var(--r-md);
+}
+.oracle-welcome-dots i {
+  transition: width 0.25s var(--ease);
+}
+.oracle-welcome-dots i.is-active {
+  width: 30px;
+}
+.oracle-skip,
+.oracle-register-close {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.oracle-table-wrap {
+  border: 1px solid var(--line-dark);
+  border-radius: var(--r-lg);
+  background: var(--ink-2);
+  box-shadow: var(--sh-3);
+}
+.oracle-table th {
+  padding: 1.1rem 1rem;
+  background: rgba(247, 246, 243, 0.03);
+  color: rgba(247, 246, 243, 0.62);
+  font-size: 0.75rem;
+}
+.oracle-table td {
+  padding: 1rem;
+  color: rgba(247, 246, 243, 0.82);
+  font-size: 0.92rem;
+}
+.oracle-table tbody tr {
+  transition: background-color 0.18s var(--ease);
+}
+.oracle-table tbody tr:hover td {
+  background: rgba(247, 246, 243, 0.04);
+}
+.oracle-table td:first-child {
+  font-size: 0.85rem;
+}
+.oracle-winner td,
+.oracle-winner:hover td {
+  background: rgba(193, 95, 60, 0.14);
+}
+.oracle-winner td:first-child {
+  box-shadow: 3px 0 0 var(--clay) inset;
+}
+.oracle-winner-tag {
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--clay-deep);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.oracle-view-only {
+  padding: 8px 14px;
+  border: 1px solid var(--line-dark);
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+.oracle-prize-line {
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .oracle-upgrade-action {
+    min-width: 0;
+  }
+}
+@media (max-width: 640px) {
+  .nav-shell nav {
+    display: none;
+  }
+  .nav-shell > div {
+    padding: 0 16px;
+  }
+  .nav-shell.fixed {
+    top: 8px;
+    width: calc(100% - 20px);
+    border-radius: 14px;
+  }
+  .site-brand {
+    font-size: 12px;
+  }
+  .oracle-nav-upgrade {
+    padding: 0.55rem 0.7rem;
+  }
+  .oracle-upgrade-inner {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+    padding: 1.7rem 1.1rem;
+  }
+  .oracle-upgrade-action {
+    min-width: 0;
+  }
+  .or-step {
+    padding: 1.25rem;
+  }
+  .oracle-intro-copy > p:not(.eyebrow) {
+    font-size: 16px;
+  }
+  .oracle-table th,
+  .oracle-table td {
+    padding: 0.85rem 0.75rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .oracle-intro-copy,
+  .oracle-score-preview {
+    animation: none;
+  }
+  .oracle-answer-option,
+  .oracle-topic-choice span {
+    transition: none;
+  }
+  .oracle-answer-option:hover {
+    transform: none;
+  }
+}
